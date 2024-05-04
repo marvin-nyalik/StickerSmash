@@ -2,7 +2,8 @@
 
 # dependencies
 node_modules/
-
+sticker-smash-assets/
+sticker-smash-assets.zip
 # Expo
 .expo/
 dist/
