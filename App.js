@@ -5,6 +5,7 @@ import ImageViewer from './components/ImageViewer';
 import Button from './components/Button';
 import * as ImagePicker from 'expo-image-picker';
 import * as MediaLibrary from 'expo-media-library';
+import * as SplashScreen from 'expo-splash-screen';
 import domtoimage from 'dom-to-image';
 import { useState, useRef } from 'react';
 import CircleButton from './components/CircleButton';
@@ -25,6 +26,7 @@ export default function App() {
   const [pickedEmoji, setPickedEmoji] = useState(null);
 
   if (status === null ) requestPermission();
+
   const onReset = () => {
     setOptions(false);
   };
@@ -72,6 +74,9 @@ export default function App() {
       }
     }
   };
+
+  // SplashScreen.preventAutoHideAsync();
+  // setTimeout(SplashScreen.hideAsync, 1000);
 
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
